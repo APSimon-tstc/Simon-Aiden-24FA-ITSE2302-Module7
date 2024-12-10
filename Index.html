@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Texas T-Shirt Order Form</title>
+    <script src="Scripts/JavaScript.js" defer></script>
+    <link rel="stylesheet" href="CSS/Styles.css" />
+    <!-- Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <!--Logo-->
+      <div class="logo">
+        <img
+          src="Images/logo.png"
+          alt="Texas T-Shirt Company Logo"
+          width="100"
+          height="50"
+        />
+      </div>
+      <nav>
+        <!-- nav bar-->
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Texas T-Shirt Order Form</h1>
+
+      <form id="tshirtOrderForm">
+        <fieldset>
+          <!--Field set to ask for information ( 2 text and one email )-->
+          <legend>Customer Information</legend>
+          <label for="schoolName">School Name:</label>
+          <input type="text" id="schoolName" name="schoolName" required />
+
+          <label for="customerName">Customer Name:</label>
+          <input type="text" id="customerName" name="customerName" required />
+
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
+        </fieldset>
+
+        <fieldset>
+          <legend>T-shirt Style</legend>
+          <!--1st extra field-->
+          <label for="shirtSelect">Choose T-shirt Design:</label>
+          <select id="shirtSelect" name="shirtDesign" required>
+            <option value="25">Design A - $25</option>
+            <option value="30">Design B - $30</option>
+            <option value="35">Design C - $35</option>
+          </select>
+          <!--drop down menu that changes the image based on what is selected-->
+          <div>
+            <img
+              id="shirtImg"
+              src="Images/25.png"
+              alt="T-shirt Style"
+              width="350"
+              height="350"
+            />
+          </div>
+          <!-- image to be changed-->
+        </fieldset>
+
+        <fieldset>
+          <!--final field set-->
+          <legend>T-Shirt Order Details</legend>
+
+          <label for="shirtQuantity">Select Quantity:</label>
+          <!--shirt quantity field (2nd extra field)-->
+          <input type="number" id="shirtQuantity" name="shirtQuantity" />
+
+          <div>
+            <label>Additional Warrenty:</label>
+            <!--Three check boxes with prices + 1 -->
+            <input type="checkbox" id="feature4" name="feature" value="0" />
+            <label for="feature4">No Warrenty</label>
+            <input type="checkbox" id="feature1" name="feature" value="5" />
+            <label for="feature1">1 Year Warrenty ($5)</label>
+            <input type="checkbox" id="feature2" name="feature" value="10" />
+            <label for="feature2">2 Year Warrenty ($10)</label>
+            <input type="checkbox" id="feature3" name="feature" value="15" />
+            <label for="feature3">3 Year Warrenty ($15)</label>
+          </div>
+
+          <div>
+            <label>Choose Shipping Method:</label
+            ><!--Two radios with prices-->
+            <input type="radio" id="standShip" name="Shipping" value="10" />
+            <label for="standShip">Standard - $10</label>
+            <input type="radio" id="expShip" name="Shipping" value="20" />
+            <label for="expShip">Express - $20</label>
+          </div>
+        </fieldset>
+
+        <button type="submit">Place Order</button>
+        <button type="reset">Reset</button>
+        <!--Submit buttons-->
+      </form>
+
+      <div id="orderSummary" style="display: none;">
+        <h2>Order Summary</h2>
+        <!--order summary hidded until submit is pressed-->
+        <p id="summaryText"></p>
+      </div>
+    </main>
+
+    <footer>
+      <!--copyright footer-->
+      <p>© 2024 Aiden Simon</p>
+    </footer>
+  </body>
+</html>
